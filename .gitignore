@@ -1,0 +1,11 @@
+# Fontes originais e arquivos temporários não fazem parte do site.
+*.xlsx
+*.xls
+*.xlsm
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+.env
+.env.*
+node_modules/

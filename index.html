@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Relatório de operação OMOTOR: setembro de 2026, últimos 12 meses e mensagens por projeto.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>OMOTOR — Relatório de Operação</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./data/report-data.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <noscript><p class="javascript-notice">Ative o JavaScript para consultar o dashboard e seus filtros.</p></noscript>
+<div id="omotor-report" lang="pt-BR">
+
+<header class="or-top"><div class="or-brand"><span class="or-mark" aria-hidden="true">o.</span><span>OMOTOR · RELATÓRIO DE OPERAÇÃO</span></div><span class="or-top-note">Três visões independentes</span></header>
+<main class="or-main">
+  <div class="or-hero"><div><p class="or-eyebrow" id="or-eyebrow">Visão mensal</p><h1 id="or-title">Setembro em perspectiva.</h1><p class="or-sub" id="or-sub">Atendimento e utilização no mês de setembro.</p></div><div class="or-period"><small>PERÍODO DESTA VISÃO</small><span id="or-period">01 a 30 de setembro de 2026</span></div></div>
+  <nav class="or-nav" role="tablist" aria-label="Visões independentes do relatório"><button type="button" class="cursor-interaction" id="or-tab-monthly" role="tab" aria-selected="true" aria-controls="or-monthly">Setembro</button><button type="button" class="cursor-interaction" id="or-tab-annual" role="tab" aria-selected="false" aria-controls="or-annual">Últimos 12 meses</button><button type="button" class="cursor-interaction" id="or-tab-projects" role="tab" aria-selected="false" aria-controls="or-projects">Mensagens por projeto</button></nav>
+  <section id="or-monthly" role="tabpanel" aria-labelledby="or-tab-monthly"></section>
+  <section id="or-annual" role="tabpanel" aria-labelledby="or-tab-annual" hidden></section>
+  <section id="or-projects" role="tabpanel" aria-labelledby="or-tab-projects" hidden>
+    <div class="or-controls"><label class="or-field">Período dos dados de uso<select id="or-project-period" class="cursor-interaction"><option value="september">Setembro de 2026</option><option value="total_12m">Últimos 12 meses · out/25 a set/26</option></select></label><label class="or-field">Projeto<select id="or-project-selector" class="cursor-interaction"><option value="all">Todos os 18 projetos</option></select></label></div>
+    <div id="or-project-content" aria-live="polite"></div>
+  </section>
+  <footer class="or-footer" id="or-footer">Fonte: Relatório Setembro(2).xlsx.</footer>
+</main>
+
+
+</div>
+</body>
+</html>
