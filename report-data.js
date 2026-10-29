@@ -1,4 +1,4 @@
-// Dados extraídos de Relatório Setembro(2).xlsx. Snapshot: setembro de 2026.
+// Dados extraídos de Relatório Setembro(1).xlsx. Snapshot: setembro de 2026.
 // Usuários somados não representam pessoas únicas entre projetos ou meses.
 window.OMOTOR_REPORT_DATA = {
   "monthly": {
@@ -431,7 +431,7 @@ window.OMOTOR_REPORT_DATA = {
         "value": "3"
       }
     ],
-    "attention": "As 7 pendências são dúvidas de DHL – Captação, abertas entre 28 e 30 de setembro. Situação registrada no arquivo.",
+    "attention": "As 7 pendências são dúvidas de DHL – Captação, abertas entre 28 e 30 de setembro.",
     "source": "Dashboard - Setembro",
     "notes": [
       "Os status refletem a situação do arquivo, incluindo atualização em 01/10/2026, e não necessariamente o fechamento de 30/09.",
@@ -1091,11 +1091,7 @@ window.OMOTOR_REPORT_DATA = {
       },
       {
         "label": "N2",
-        "value": 17
-      },
-      {
-        "label": "N1,N2",
-        "value": 1
+        "value": 18
       }
     ],
     "timeline": [
@@ -1472,13 +1468,13 @@ window.OMOTOR_REPORT_DATA = {
         "value": "8"
       }
     ],
-    "attention": "As 7 pendências são dúvidas de DHL – Captação, abertas entre 28 e 30 de setembro. Situação registrada no arquivo.",
+    "attention": "As 7 pendências são dúvidas de DHL – Captação, abertas entre 28 e 30 de setembro.",
     "source": "Dashboard - Últimos 12 meses",
     "notes": [
       "Os status refletem a situação do arquivo, incluindo atualização em 01/10/2026, e não necessariamente o fechamento de 30/09.",
       "Tempos são corridos, não horas trabalhadas; não há meta SLA definida.",
       "Os projetos de uso e de chamados possuem escopos diferentes.",
-      "635 dos 860 finalizados não têm matriz de atendimento preenchida; há 1 registro combinado N1,N2, preservado separado.",
+      "635 dos 860 finalizados não têm matriz de atendimento preenchida.",
       "748 dos 867 chamados não têm sistema informado (86,3%).",
       "A soma anual de usuários não representa pessoas distintas no ano.",
       "O dashboard de suporte rotula como B2W os dois chamados identificados como B2W – Max – Atendimento na base; foi preservado esse agrupamento apenas no suporte, sem associá-lo automaticamente aos projetos de uso.",

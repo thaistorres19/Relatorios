@@ -8,20 +8,20 @@ Dashboard estático com três visões independentes:
 
 ## Abrir no computador
 
-Extraia o ZIP mantendo as pastas e abra `index.html` no navegador. Não é necessário instalar Node, Python ou um banco de dados. Mantenha `styles.css`, `app.js` e a pasta `data` junto ao HTML.
+Extraia o ZIP mantendo as pastas e abra `index.html` no navegador. Não é necessário instalar Node, Python ou um banco de dados. Mantenha `styles.css`, `app.js` e `report-data.js` junto ao HTML.
 
 ## Colocar no GitHub
 
 1. No GitHub, crie um repositório chamado, por exemplo, `dashboard-omotor`.
 2. Comece com a opção **Private**, pois os arquivos incluem dados operacionais e nomes de clientes.
-3. Use **Add file → Upload files** e envie o conteúdo desta pasta, preservando a pasta `data`.
+3. Use **Add file → Upload files** e envie o conteúdo desta pasta, preservando os nomes dos arquivos.
 4. Confirme o envio com **Commit changes**.
 
 O arquivo `index.html` deve ficar na raiz do repositório. Não envie apenas o ZIP: extraia os arquivos antes do upload. Guardar o código no GitHub não publica automaticamente um site.
 
 ## Publicar um link com GitHub Pages
 
-Esta etapa é opcional. Os dados presentes em `data/report-data.js` ficam disponíveis a quem puder acessar o site. O pacote não inclui autenticação ou controle de acesso.
+Esta etapa é opcional. Os dados presentes em `report-data.js` ficam disponíveis a quem puder acessar o site. O pacote não inclui autenticação ou controle de acesso.
 
 **Repositório privado e site privado são configurações diferentes.** O GitHub Pages normalmente publica o site na internet mesmo quando o repositório é privado. O acesso privado a sites de projeto exige uma organização com GitHub Enterprise Cloud e configuração de visibilidade apropriada. No GitHub Free, o Pages exige repositório público. Não altere a visibilidade deste projeto apenas para habilitar a hospedagem dos dados reais.
 
@@ -44,15 +44,15 @@ Para uso interno, mantenha o código privado e configure uma hospedagem com aute
 | `index.html` | Estrutura geral, navegação e carregamento dos arquivos. |
 | `styles.css` | Cores, fontes, dimensões, espaçamentos e comportamento em telas menores. |
 | `app.js` | Montagem dos indicadores, tabelas, abas e filtros. |
-| `data/report-data.js` | Dados extraídos e conferidos do relatório fornecido. |
+| `report-data.js` | Dados extraídos e conferidos do relatório fornecido. |
 
 Os cards e tabelas são montados por JavaScript. Para alterações estruturais nesses elementos, edite as funções de apresentação em `app.js`; para aparência, comece por `styles.css`.
 
 ## Atualizar os dados
 
-Esta entrega contém o retrato do arquivo **Relatório Setembro(2).xlsx**. Não há sincronização automática com Excel, upload de planilha ou atualização agendada.
+Esta entrega contém o retrato do arquivo **Relatório Setembro(1).xlsx**. Não há sincronização automática com Excel, upload de planilha ou atualização agendada.
 
-Uma atualização deve substituir o conjunto correspondente em `data/report-data.js`, preservando sua estrutura, e conferir os rótulos de período em `app.js` e `index.html`. Os conjuntos `monthly`, `annual` e `projects` têm origens e escopos próprios. Um importador de novas planilhas pode ser acrescentado em uma próxima versão, com validação dos totais.
+Uma atualização deve substituir o conjunto correspondente em `report-data.js`, preservando sua estrutura, e conferir os rótulos de período em `app.js` e `index.html`. Os conjuntos `monthly`, `annual` e `projects` têm origens e escopos próprios. Um importador de novas planilhas pode ser acrescentado em uma próxima versão, com validação dos totais.
 
 ## Critérios preservados
 
@@ -69,4 +69,7 @@ Uma atualização deve substituir o conjunto correspondente em `data/report-data
 - [Configurar a origem de publicação](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
 - [Visibilidade do site e acesso privado](https://docs.github.com/en/enterprise-cloud%40latest/pages/getting-started-with-github-pages/changing-the-visibility-of-your-github-pages-site)
 
-Este pacote não foi enviado a um repositório nem publicado na internet.
+Publicado em https://thaistorres19.github.io/Relatorios/.
+
+Os gráficos usam D3.js 7.9.0, carregado pela internet. A atualização inclui os destaques de incidentes e problemas, os gráficos por projeto e a matriz de atendimento revisada: 18 chamados finalizados em N2.
+

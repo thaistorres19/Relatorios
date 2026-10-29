@@ -7,9 +7,10 @@
   <meta name="description" content="Relatório de operação OMOTOR: setembro de 2026, últimos 12 meses e mensagens por projeto.">
   <meta name="robots" content="noindex, nofollow">
   <title>OMOTOR — Relatório de Operação</title>
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./report-data.js" defer></script>
-  <script src="./app.js" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=747f5dd3e022">
+  <script src="./report-data.js?v=747f5dd3e022" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" defer></script>
+  <script src="./app.js?v=747f5dd3e022" defer></script>
 </head>
 <body>
   <noscript><p class="javascript-notice">Ative o JavaScript para consultar o dashboard e seus filtros.</p></noscript>
@@ -25,8 +26,148 @@
     <div class="or-controls"><label class="or-field">Período dos dados de uso<select id="or-project-period" class="cursor-interaction"><option value="september">Setembro de 2026</option><option value="total_12m">Últimos 12 meses · out/25 a set/26</option></select></label><label class="or-field">Projeto<select id="or-project-selector" class="cursor-interaction"><option value="all">Todos os 18 projetos</option></select></label></div>
     <div id="or-project-content" aria-live="polite"></div>
   </section>
-  <footer class="or-footer" id="or-footer">Fonte: Relatório Setembro(2).xlsx.</footer>
+  <footer class="or-footer" id="or-footer">Fonte: Relatório Setembro(1).xlsx.</footer>
 </main>
+
+
+
+<template id="or-focus-template">
+  <section class="or-focus-area" aria-labelledby="or-focus-title">
+    <p class="or-focus-status">Status conforme o fechamento salvo no Excel; podem incluir atualizações posteriores à abertura dos chamados.</p>
+    <div class="or-focus-shell">
+      <div class="or-focus-heading"><h2 id="or-focus-title">Incidentes e problemas</h2><span class="or-focus-sub">Setembro de 2026</span></div>
+      <div class="or-focus-columns">
+        <section class="or-focus-panel" aria-label="Incidentes de setembro">
+          <div class="or-focus-head"><h3>Incidentes</h3><span class="or-focus-badge">3 de 3 finalizados</span></div>
+          <div class="or-focus-number">3</div>
+          <div class="or-focus-sub">6,4% dos chamados do período</div>
+          <div class="or-focus-facts">
+            <div class="or-focus-fact"><span>Incidentes finalizados</span><span>3 de 3</span></div>
+            <div class="or-focus-fact"><span>Incidentes em aberto</span><span>0</span></div>
+            <div class="or-focus-fact"><span>FIX · Definitivo</span><span>3</span></div>
+          </div>
+          <div class="or-focus-projects">Projetos: Bauducco, DHL – Captação e Fleury · 1 incidente cada.</div>
+        </section>
+        <section class="or-focus-panel" aria-label="Problemas de setembro">
+          <div class="or-focus-head"><h3>Problemas</h3><span class="or-focus-badge">Nenhum registro no mês</span></div>
+          <div class="or-focus-number">0</div>
+          <div class="or-focus-sub">Problemas registrados em setembro</div>
+          <div class="or-focus-facts">
+            <div class="or-focus-fact"><span>Problemas registrados</span><span>0</span></div>
+            <div class="or-focus-fact"><span>Problemas finalizados</span><span>0</span></div>
+            <div class="or-focus-fact"><span>Problemas em aberto no escopo</span><span>0</span></div>
+          </div>
+          <div class="or-focus-projects">O valor zero refere-se aos chamados de setembro; não ao estoque de problemas de meses anteriores.</div>
+        </section>
+      </div>
+    </div>
+  </section>
+</template>
+
+
+<template id="or-annual-focus-template">
+  <section class="or-focus-area" aria-labelledby="or-annual-focus-title">
+    <p class="or-focus-status">Status conforme o fechamento salvo no Excel; podem incluir atualizações posteriores à abertura dos chamados.</p>
+    <div class="or-focus-shell">
+      <div class="or-focus-heading"><h2 id="or-annual-focus-title">Incidentes e problemas</h2><span class="or-focus-sub">Out/2025 a set/2026</span></div>
+      <div class="or-focus-columns">
+        <section class="or-focus-panel" aria-label="Incidentes dos últimos 12 meses">
+          <div class="or-focus-head"><h3>Incidentes</h3><span class="or-focus-badge">168 de 168 finalizados</span></div>
+          <div class="or-focus-number">168</div>
+          <div class="or-focus-sub">19,4% dos chamados do período</div>
+          <div class="or-focus-facts">
+            <div class="or-focus-fact"><span>Incidentes finalizados</span><span>168 de 168</span></div>
+            <div class="or-focus-fact"><span>Incidentes em aberto</span><span>0</span></div>
+            <div class="or-focus-fact"><span>FIX · Definitivo</span><span>146</span></div>
+            <div class="or-focus-fact"><span>FIX · Workaround</span><span>14</span></div>
+            <div class="or-focus-fact"><span>FIX · Não preenchido</span><span>8</span></div>
+          </div>
+          <div class="or-focus-projects">17 projetos com incidentes no período.</div>
+        </section>
+        <section class="or-focus-panel" aria-label="Problemas dos últimos 12 meses">
+          <div class="or-focus-head"><h3>Problemas</h3><span class="or-focus-badge">5 de 5 finalizados</span></div>
+          <div class="or-focus-number">5</div>
+          <div class="or-focus-sub">Problemas registrados nos últimos 12 meses</div>
+          <div class="or-focus-facts">
+            <div class="or-focus-fact"><span>Problemas registrados</span><span>5</span></div>
+            <div class="or-focus-fact"><span>Problemas finalizados</span><span>5</span></div>
+            <div class="or-focus-fact"><span>Problemas em aberto no escopo</span><span>0</span></div>
+          </div>
+          <div class="or-focus-projects">Projetos: DHL – Lia RH · 3 problemas; DHL – Captação · 2 problemas.</div>
+        </section>
+      </div>
+      <div class="or-focus-pending"><strong>As 7 pendências são dúvidas de DHL – Captação.</strong> Abertas entre 28 e 30 de setembro. Não são incidentes nem problemas.</div>
+    </div>
+  </section>
+</template>
+
+
+
+<template id="or-project-charts-template">
+  <section id="or-project-chart-block" class="or-project-chart-block" aria-label="Gráficos do projeto selecionado">
+    <div class="or-project-chart-grid">
+      <section class="or-panel or-project-chart-panel">
+        <h3>Setembro × referência dos 12 meses</h3>
+        <p class="or-project-chart-sub">100% = referência de cada indicador</p>
+        <div class="or-project-chart-plot" data-project-chart="comparison"></div>
+        <div class="or-project-chart-legend" aria-label="Legenda do comparativo"><span><i class="or-chart-key" aria-hidden="true"></i>Setembro/2026</span><span><i class="or-chart-key reference" aria-hidden="true"></i>Referência 12 meses</span></div>
+      </section>
+      <section class="or-panel or-project-chart-panel">
+        <h3>Últimos 12 meses</h3>
+        <p class="or-project-chart-sub">Out/2025 a set/2026</p>
+        <div class="or-project-chart-plot" data-project-chart="history"></div>
+        <div class="or-project-chart-legend" aria-label="Séries do histórico">
+          <button type="button" class="cursor-interaction" data-chart-series="messages" aria-pressed="true"><i class="or-chart-key" aria-hidden="true"></i>Mensagens de usuário</button>
+          <button type="button" class="cursor-interaction" data-chart-series="users" aria-pressed="true"><i class="or-chart-key users" aria-hidden="true"></i>Usuários únicos</button>
+          <button type="button" class="cursor-interaction" data-chart-series="messages_per_user" aria-pressed="true"><i class="or-chart-key ratio" aria-hidden="true"></i>Média msg./usuário</button>
+        </div>
+      </section>
+    </div>
+    <p class="or-project-chart-note" data-chart-source-note></p>
+    <div class="or-project-chart-tip" role="tooltip" hidden></div>
+  </section>
+</template>
+
+
+
+<template id="or-annual-issues-template">
+  <section id="or-annual-issues-block" class="or-project-chart-block or-annual-chart-block" aria-labelledby="or-annual-issues-title">
+    <div class="or-panel or-project-chart-panel">
+      <h3 id="or-annual-issues-title">Incidentes e problemas mês a mês</h3>
+      <p class="or-project-chart-sub">Mês de abertura dos chamados · out/2025 a set/2026</p>
+      <div class="or-project-chart-plot" data-annual-chart="issues"></div>
+      <div class="or-project-chart-legend" aria-label="Legenda de incidentes e problemas"><span><i class="or-chart-key" style="background:var(--or-teal)" aria-hidden="true"></i>Incidentes</span><span><i class="or-chart-key" style="background:var(--or-gold)" aria-hidden="true"></i>Problemas</span></div>
+    </div>
+    <div class="or-project-chart-tip" role="tooltip" hidden></div>
+  </section>
+</template>
+
+
+<template id="or-projects-annual-template">
+  <section id="or-projects-annual-charts" class="or-project-chart-block" aria-label="Gráficos dos últimos 12 meses dos 18 projetos">
+    <div class="or-project-chart-grid" style="grid-template-columns:minmax(0,1fr)">
+      <section class="or-panel or-project-chart-panel">
+        <h3>Setembro × referência dos 12 meses</h3>
+        <p class="or-project-chart-sub">Consolidado dos 18 projetos · 100% = referência de cada indicador</p>
+        <div class="or-project-chart-plot" data-projects-annual-chart="comparison"></div>
+        <div class="or-project-chart-legend" aria-label="Legenda do comparativo dos 18 projetos"><span><i class="or-chart-key" aria-hidden="true"></i>Setembro/2026</span><span><i class="or-chart-key reference" aria-hidden="true"></i>Referência 12 meses</span></div>
+        <p class="or-project-chart-note">Referência: média dos 12 totais mensais de mensagens e usuários; msg./usuário = razão dos totais do período. A cobertura varia de 16 a 18 projetos por mês, sem estimar registros ausentes. Usuários são somados, sem deduplicação.</p>
+      </section>
+      <section class="or-panel or-project-chart-panel">
+        <h3>Histórico mensal dos 18 projetos</h3>
+        <p class="or-project-chart-sub">Out/2025 a set/2026 · dados da aba Uso por Projeto</p>
+        <div class="or-project-chart-plot" data-projects-annual-chart="history"></div>
+        <div class="or-project-chart-legend" aria-label="Séries do histórico dos 18 projetos">
+          <button type="button" class="cursor-interaction" data-projects-annual-series="messages" aria-pressed="true"><i class="or-chart-key" aria-hidden="true"></i>Mensagens de usuário</button>
+          <button type="button" class="cursor-interaction" data-projects-annual-series="users" aria-pressed="true"><i class="or-chart-key users" aria-hidden="true"></i>Usuários · soma</button>
+          <button type="button" class="cursor-interaction" data-projects-annual-series="ratio" aria-pressed="true"><i class="or-chart-key ratio" aria-hidden="true"></i>Msg./usuário</button>
+        </div>
+        <p class="or-project-chart-note">Soma dos registros disponíveis em cada mês, com cobertura de 16 a 18 projetos. Usuários são somados entre projetos, sem deduplicação. Meses sem dados em um projeto não são estimados.</p>
+      </section>
+    </div>
+    <div class="or-project-chart-tip" role="tooltip" hidden></div>
+  </section>
+</template>
 
 
 </div>
